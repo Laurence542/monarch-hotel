@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+  <!-- Carousel Start -->
+  <div class="container-fluid p-0 mb-5">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="{% static 'images/featured_images/carousel-1.jpg '%}" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 700px;">
+                        <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Indulge in Luxury Living</h6>
+                        <h1 class="display-3 text-white mb-4 animated slideInDown">Your Dream Hotel Awaits</h1>
+                        <a href="{% url 'room' %}" class="btn btn-danger py-md-3 px-md-5 me-3 animated slideInLeft">Book now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+
+    
+
+
+
+{% comment %} room start {% endcomment %}
+
+
+  <!-- About Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h6 class="section-title text-start text-danger text-uppercase">About Us</h6>
+                <h2 class="mb-4">Welcome to <span class="text-danger text-uppercase">Monarch hotel</span></h2>
+                <p class="mb-4">
+
+                    Welcome to Monarch hotel, a luxurious and comfortable destination for your stay. 
+                    Situated in the heart of Nairobi,Kenya , our hotel offers a perfect blend of modern elegance and warm hospitality.
+                    we strive to provide our guests with an unforgettable experience.
+                    Whether you're here for a leisurely vacation or a business trip, we ensure a relaxing and enjoyable stay.
+                    At Monarch hotel, we prioritize the comfort and satisfaction of our guests. 
+                    Our dedicated staff is committed to providing exceptional service, ensuring that every aspect of your stay exceeds your expectations.
+                    Experience the finest accommodations, world-class amenities, and personalized attention at Monarch hotel.
+                    We look forward to welcoming you and making your stay truly exceptional.
+
+                </p>
+        
+                <a href="{% url 'room' %}" class="btn btn-danger py-md-3 px-md-5 me-3 animated slideInLeft">Book now</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6 text-end">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{% static 'images/img/image1.jpg '%}" style="margin-top: 25%;">
+                    </div>
+                    <div class="col-6 text-start">
+                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="{% static 'images/img/image2.jpg '%}">
+                    </div>
+                    <div class="col-6 text-end">
+                        <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="{% static 'images/img/image3.jpg '%}">
+                    </div>
+                    <div class="col-6 text-start">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="{% static 'images/img/image4.jpg '%}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+{% comment %} explore our rooms {% endcomment %}
+ <!-- Room Start -->
+ <div class="container-xxl py-5">
+  <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title text-center text-danger text-uppercase">Our Rooms</h6>
+          <h1 class="mb-5">Explore Our <span class="text-danger text-uppercase">Rooms</span></h1>
+      </div>
+      <div class="row g-4">
+          {% for room in roomss %}
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="room-item shadow rounded overflow-hidden">
+                  <div class="position-relative">
+                      <img class="img-fluid" src="{{ room.image1.url }}" alt="">
+                      <small class="position-absolute start-0 top-100 translate-middle-y bg-danger text-white rounded py-1 px-3 ms-4">Ksh: {{ room.price }}/Night</small>
+                  </div>
+                  <br>
+                  <div class="p-4 mt-2">
+                      <div class="d-flex justify-content-between mb-3">
+                          <h5 class="mb-0">{{ room.name |slice:":15" }}</h5>
+                          <div class="ps-2">
+                              <small class="fa fa-star text-danger"></small>
+                              <small class="fa fa-star text-danger"></small>
+                              <small class="fa fa-star text-danger"></small>
+                              <small class="fa fa-star text-danger"></small>
+                              <small class="fa fa-star text-danger"></small>
+                          </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                          <small class="border-end me-3 pe-3"><i class="fa fa-bed text-danger me-2"></i>{{ room.bed }} Bed</small>
+                          <small class="border-end me-3 pe-3"><i class="fa fa-bath text-danger me-2"></i>{{ room.bathroom }} Bath</small>
+                          <small><i class="fa fa-wifi text-danger me-2"></i>Wifi</small>
+                      </div>
+                      <p class="text-body mb-3">{{ room.details |slice:":30" }}</p>
+                      <div class="d-flex justify-content-between">
+                          <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{% url 'check' %}">Book Now</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</div>   
+{% comment %} end of explore our rooms {% endcomment %}
+
+
+
+{% comment %} explore services {% endcomment %}
+
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-danger text-uppercase">Our Services</h6>
+            <h1 class="mb-5">Explore Our <span class="text-danger text-uppercase">Services</span></h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <a class="service-item rounded" href="{% url 'room'%}">
+                    <div class="service-icon bg-transparent border rounded p-1">
+                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                            <i class="fa fa-hotel fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                    <h5 class="mb-3">Rooms & Appartment</h5>
+                    <p class="text-body mb-0">
+                        Experience contemporary elegance in our stylishly appointed rooms. With sleek decor, 
+                        luxurious bedding, and state-of-the-art amenities, 
+                        our accommodations offer a perfect blend of comfort and sophistication.
+
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <a class="service-item rounded" href="{% url 'resturant_dinings' %}">
+                    <div class="service-icon bg-transparent border rounded p-1">
+                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                            <i class="fa fa-utensils fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                    <h5 class="mb-3">Restaurant & Food</h5>
+                    <p class="text-body mb-0">
+                        Immerse yourself in an ambiance of elegance and sophistication at our fine dining restaurant.
+                         From impeccable service to exquisite presentations,
+                         every aspect is designed to elevate your dining experience and create cherished memories.
+
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <a class="service-item rounded" href="resturant_dinings">
+                    <div class="service-icon bg-transparent border rounded p-1">
+                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                            <i class="fa fa-spa fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                    <h5 class="mb-3">Catering & Conference</h5>
+                    <p class="text-body mb-0">
+                        Foster collaboration and innovation in our flexible conference spaces. With breakout rooms,
+                         brainstorming areas, and comfortable lounges,
+                         our venues provide versatile settings for small group discussions, workshops, and interactive sessions.
+
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <a class="service-item rounded" href="{% url 'catering_conference' %}">
+                    <div class="service-icon bg-transparent border rounded p-1">
+                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                            <i class="fa fa-swimmer fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                    <h5 class="mb-3">Sports & Gaming</h5>
+                    <p class="text-body mb-0">
+                        Engage in a variety of sports and activities at our facility. From basketball and tennis to swimming and soccer, 
+                        our state-of-the-art sports center provides the perfect environment for individuals and teams to enjoy their favorite athletic pursuits.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <a class="service-item rounded" href="{% url 'catering_conference' %}">
+                    <div class="service-icon bg-transparent border rounded p-1">
+                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                            <i class="fa fa-glass-cheers fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                    <h5 class="mb-3">Event & Party</h5>
+                    <p class="text-body mb-0">
+                        From corporate functions to social gatherings, our event services ensure a seamless and unforgettable experience.
+                         With meticulous planning, attention to detail, and a team of professionals, we create events that exceed expectations. 
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <a class="service-item rounded" href="{% url 'catering_conference' %}">
+                    <div class="service-icon bg-transparent border rounded p-1">
+                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                            <i class="fa fa-dumbbell fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                    <h5 class="mb-3">GYM & Yoga</h5>
+                    <p class="text-body mb-0">
+                        Find inner peace and balance in our serene yoga studio. Our experienced instructors guide you through 
+                        a range of yoga styles, from gentle flows to 
+                        invigorating practices, creating a space for relaxation, mindfulness, and self-discovery.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+<style>
+
+    /*** Service ***/
+    .service-item {
+      height: 320px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      background: #FFFFFF;
+      box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+      transition: .5s;
+    }
+    
+    .service-item:hover {
+      background: #dc3545;
+    }
+    
+    .service-item .service-icon {
+      margin: 0 auto 30px auto;
+      width: 65px;
+      height: 65px;
+      transition: .5s;
+    }
+    
+    .service-item i,
+    .service-item h5,
+    .service-item p {
+      transition: .5s;
+    }
+    
+    .service-item:hover i,
+    .service-item:hover h5,
+    .service-item:hover p {
+      color: #FFFFFF !important;
+    }
+    
+</style>  
+
+{% comment %} end of explore services {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

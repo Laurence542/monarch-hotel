@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+   
+
+<div class="container-xxl bg-white p-0">
+   
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'images/featured_images/carousel-1.jpg '%});">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center pb-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h6 class="section-title text-start text-danger text-uppercase">About Us</h6>
+                    <h2 class="mb-4">Welcome to <span class="text-danger text-uppercase">Monarch hotel</span></h2>
+                    <p class="mb-4">
+                        Welcome to Monarch hotel, a luxurious and comfortable destination for your stay. 
+                        Situated in the heart of Nairobi,Kenya , our hotel offers a perfect blend of modern elegance and warm hospitality.
+                        we strive to provide our guests with an unforgettable experience.
+                        Whether you're here for a leisurely vacation or a business trip, we ensure a relaxing and enjoyable stay.
+                        At Monarch hotel, we prioritize the comfort and satisfaction of our guests. 
+                        Our dedicated staff is committed to providing exceptional service, ensuring that every aspect of your stay exceeds your expectations.
+                        Experience the finest accommodations, world-class amenities, and personalized attention at Monarch hotel.
+                        We look forward to welcoming you and making your stay truly exceptional.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{% static 'images/img/image5.jpg '%}" style="margin-top: 25%;">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="{% static 'images/img/image6.jpg '%}">
+                        </div>
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="{% static 'images/img/image7.jpg '%}">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="{% static 'images/img/image8.jpg '%}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+   
+
+
+{%endblock%}

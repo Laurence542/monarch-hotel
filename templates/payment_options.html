@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% if error_message %}
+<div class="alert alert-primary" role="alert">
+    {{ error_message }}
+</div>
+{% endif %}
+
+<style>
+    .center-text {
+      text-align: center;
+    }
+    
+    .button-group {
+      text-align: center;
+    }
+    
+    .button-group .btn {
+      margin: 0 5px;
+    }
+    </style>
+    
+    <!-- Inside your template -->
+    <br><br>
+    <h3 class="center-text">Choose your prefered payment method</h3>
+    <br>
+    <div class="button-group">
+        <a href="{% url 'card' %}" class="btn btn-danger">On credit card</a>
+        <a href="{% url 'success' %}" class="btn btn-danger">Payment on Arrival</a>
+    </div>
+    <br><br><br><br><br><br>
+
+{%endblock%}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+      
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'images/featured_images/carousel-1.jpg '%});">
+            <div class="container-fluid page-header-inner py-5">
+                <div class="container text-center pb-5">
+                    <h4 class="display-4 text-white mb-4 animated slideInDown">Restaurant & Dinning</h4>
+                
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+      <br>
+        <style>
+            .container {
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+            }
+            .column {
+              flex-basis: 50.33%;
+              padding: 10px;
+            }
+            @media screen and (max-width: 768px) {
+                .column {
+                  flex-basis: 100%;
+                }
+            }    
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="column">
+              <h4>BREAKFAST</h4>
+              <p>
+                The continental breakfast is a timeless choice for your next company event at The Monarch. 
+                With an array of fun, themed menu options that range from healthy to sugary sweet
+                 (but always including an assortment of muffins, bagels, yogurts, fruit and more),
+                 all guests will find something to cleanse their palate.
+              </p>
+            </div>
+            <div class="column">
+                <h4>LUNCH</h4>
+              <p>
+                The buffet lunch at Aria is perfect for corporate events where guests want to mix and mingle.
+                 The food choices, including your choice of one appetizer salad,
+                 one pasta dish and two delectable main courses are sure to satisfy all eventgoers.
+              </p>
+            </div>
+            <div class="column">
+                <h4>DINNER</h4>
+              <p>
+                Choose a buffet dinner for your next company event at The Monarch and treat your guests
+                 to classic menu options from renowned chefs. Choose from a spread of appetizers, 
+                 pasta dishes, chicken, fish and a butcher’s carving station.
+                 Roasted vegetables, potato or rice, dessert, and more are always included.
+              </p>
+            </div>
+          </div>
+    </div>
+    <br>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+{%endblock%}

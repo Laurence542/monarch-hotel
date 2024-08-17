@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+Catlist
+{% endblock %}
+
+{% block content %}
+
+   <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+    <div class="col-12 pb-5"><h1> List of {{catlist.cat}} posts</h1></div>
+    {% for post in catlist.posts %}
+        <article class="post-card flat-card">
+              <div class="image-wrapper bg-image" style="background-image: url({{post.image.url}});">
+                
+              </div>
+              <div class="post-info">
+                <div class="topic-wrapper">
+                  <span class="gray-1">{{ post.created_on}}</span>
+                </div>
+                <div>
+                  <h3 class="post-title">
+                    <a href="{% url 'post_detail' post.slug  %}" class="td-none">
+                      {{ post.title }}
+                    </a>
+                  </h3>
+                </div>
+                <div class="post-preview">
+                  <p>{{post.content|slice:":250" }}</p>
+                </div>
+                <div class="author-info">
+                  <div class="author">
+                    <p class="gray-1 link">{{ post.author }}</a>
+                  </div>
+                  <a href="{% url 'post_detail' post.slug  %}" class="link">
+                    Read more
+                    <ion-icon name="arrow-forward-outline" class="readmore-icon"></ion-icon>
+                  </a>
+                </div>
+              </div>
+            </article>
+    {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

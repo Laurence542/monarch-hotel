@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h5>Hotel booking successful. Your booking number is <span id="bookingNumber"></span>.</h5>
+<script>
+    // Generate random number between 100000 and 999999
+    var bookingNumber = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
+    document.getElementById("bookingNumber").innerText = bookingNumber;
+  </script>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+{%endblock%}
