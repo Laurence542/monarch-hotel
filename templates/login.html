@@ -69,9 +69,6 @@
   
     <br><br>      
       <div class="container1">  
-        <div class="logo">
-            <img src="{% static 'images/icons/monarchhotel.jpg '%}" alt="Logo">
-            </div>
         <h2>Login</h2>
         <form method="POST" action="{% url 'login' %}">
             {% csrf_token %}
